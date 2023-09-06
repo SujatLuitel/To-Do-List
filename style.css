@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Poppins:wght@100;300;400;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(19, 8, 140);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  gap: 1.5em;
+  padding: 1em 2em;
+  width: 350px;
+  border-radius: 1em;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+}
+.header > h1 {
+  font-size: 2.5rem;
+}
+.header > img {
+  width: 35px;
+}
+.input-box {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(223, 217, 217, 0.543);
+  border-radius: 1.5em;
+}
+.input-box > input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0.5em 1em;
+  color: rgb(81, 79, 79);
+  font-weight: 500;
+  font-size: 1rem;
+  width: 70%;
+  height: 3rem;
+  border-radius: 1.5em;
+}
+
+.input-box > button {
+  border: none;
+  outline: none;
+  background-color: rgb(255, 81, 0);
+  width: 5rem;
+  color: rgb(215, 213, 213);
+  border-radius: 2em;
+  transition: background-color 300ms ease-in-out;
+}
+.input-box > button:hover {
+  cursor: pointer;
+  background-color: rgb(203, 71, 10);
+}
+.container > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  list-style: none;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding-inline: 1.5em;
+  text-transform: capitalize;
+  position: relative;
+}
+.slide-in-top {
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+ul li.checked {
+  text-decoration: line-through;
+}
+ul li::before {
+  content: "";
+  background: url(/images/unchecked.png);
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: contain;
+}
+ul .checked::before {
+  background-image: url(images/checked.png);
+}
+
+.container > ul > li:hover {
+  cursor: pointer;
+}
+ul li > span {
+  position: absolute;
+  right: 10px;
+  font-size: 1.5em;
+  font-weight: bolder;
+  width: 1.5em;
+  text-align: center;
+  border-radius: 50%;
+  transition: background-color 300ms ease-in;
+}
+ul li > span:hover {
+  background-color: rgb(239, 236, 236);
+}
